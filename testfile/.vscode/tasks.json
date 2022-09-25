@@ -1,0 +1,72 @@
+/*{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "gcc",
+            "type": "shell",
+            "command": "g++",
+            "args": [
+                "-g",
+                "${file}",
+                "-o",
+                "${fileBasenameNoExtension}.exe",
+                "-fexec-charset=GBK"
+            ]
+        },
+        {
+            "type": "cppbuild",
+            "label": "C/C++: gcc.exe 生成活动文件",
+            "command": "D:\\matlab_download_tmp\\mingw64\\bin\\gcc.exe",
+            "args": [
+                "-fdiagnostics-color=always",
+                "-g",
+                "${file}",
+                "-o",
+                "${fileDirname}\\${fileBasenameNoExtension}.exe"
+            ],
+            "options": {
+                "cwd": "${fileDirname}"
+            },
+            "problemMatcher": [
+                "$gcc"
+            ],
+            "group": "build",
+            "detail": "编译器: D:\\matlab_download_tmp\\mingw64\\bin\\gcc.exe"
+        }
+    ],
+    "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": false,
+        "panel": "shared", 
+        "showReuseMessage": true,
+        "clear": false
+    }
+}*/
+
+{
+  // See https://go.microsoft.com/fwlink/?LinkId=733558 
+  // for the documentation about the tasks.json format
+  "version": "2.0.0",
+  "tasks": [
+      {
+          "type": "shell",
+          "label": "g++", //这里注意一下，见下文
+          "command": "D:\\matlab_download_tmp\\mingw64\\bin\\g++.exe",
+          "args": [
+              "-g",
+              "${file}",
+              "-o",
+              "${fileDirname}\\${fileBasenameNoExtension}.exe"
+          ],
+          "options": {
+              "cwd": "D:\\matlab_download_tmp\\mingw64\\bin"
+          },
+          "problemMatcher": [ 
+              "$gcc"
+          ]
+      }
+  ]
+}

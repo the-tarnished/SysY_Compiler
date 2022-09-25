@@ -1,0 +1,14 @@
+const int ca[2] = {114,514};
+const int cac[2][2] = {{1,1},{45,14}};
+const int e = 114,chou = 514,newnew = 55;
+int func(int a[],int b) {
+  return a[0]/(4+b);
+}
+int main() {
+  printf("20373057\n");
+  int ara[2][1] = {{2},{1}};
+  ara[1][0] = func(ara[1],1);
+  printf("%d %d",ara[0][0],ara[1][0]);
+  printf("\n%d%d",e,chou);
+  return 0;
+}

@@ -1,0 +1,19 @@
+int func(int a[][1]) {
+  a[0][0] = a[1][0]*2 + 1 - 1;
+  a[1][0] = a[0][0]*2;
+  return a[0][0] + a[1][0];
+}
+int main() {
+  printf("20373057\n");
+  int ara[2][1] = {{2},{1}};
+  int b = func(ara);
+  printf("%d %d\n",ara[0][0],ara[1][0]);
+  printf("%d\n",b);
+  const int ca[2] = {114,514};
+  const int cac[2][2] = {{1,1},{45,14}};
+  printf("%d%d\n",ca[0],ca[1]);
+  printf("%d%d%d%d\n",cac[0][0],cac[0][1],cac[1][0],cac[1][1]);
+  int oneD[3] = {11,45,14};
+  printf("%d%d%d",oneD[0],oneD[1],oneD[2]);
+  return 0;
+}

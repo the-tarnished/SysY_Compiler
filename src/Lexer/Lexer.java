@@ -1,11 +1,12 @@
 package Lexer;
+import javafx.util.Pair;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Lexer {
     private final Source source;
-    private final ArrayList<String> words;
+    private final ArrayList<Word> words;
     private final HashMap<String, Token> word2Token;
     private int line;
 
@@ -61,7 +62,7 @@ public class Lexer {
                     } else if (source.getNthChar(1) == '*') {
                         this.eatBlockComment();
                     } else {
-                        words.add(String.valueOf(cursor));
+                        addWord(String.valueOf(cursor));
                         source.next();
                     }
                     break;
@@ -78,47 +79,47 @@ public class Lexer {
                 case ')':
                 case ';':
                     source.next();
-                    words.add(String.valueOf(cursor));
+                    addWord(String.valueOf(cursor));
                     break;
                 case '!' :
                     if (source.getNthChar(1) == '=') {
-                        words.add("!=");
+                        addWord("!=");
                         source.next();
                     } else {
-                        words.add("!");
+                        addWord("!");
                     }
                     source.next();
                     break;
                 case '=':
                     if (source.getNthChar(1) == '=') {
-                        words.add("==");
+                        addWord("==");
                         source.next();
                     } else {
-                        words.add("=");
+                        addWord("=");
                     }
                     source.next();
                     break;
                 case '<':
                     if (source.getNthChar(1) == '=') {
-                        words.add("<=");
+                        addWord("<=");
                         source.next();
                     } else {
-                        words.add("<");
+                        addWord("<");
                     }
                     source.next();
                     break;
                 case '>':
                     if (source.getNthChar(1) == '=') {
-                        words.add(">=");
+                        addWord(">=");
                         source.next();
                     } else {
-                        words.add(">");
+                        addWord(">");
                     }
                     source.next();
                     break;
                 case '&':
                     if (source.getNthChar(1) == '&') {
-                        words.add("&&");
+                        addWord("&&");
                         source.next();
                     }
                     source.next();
@@ -126,7 +127,7 @@ public class Lexer {
                     break;
                 case '|':
                     if (source.getNthChar(1) == '|') {
-                        words.add("||");
+                        addWord("||");
                         source.next();
                     }
                     source.next();
@@ -135,8 +136,10 @@ public class Lexer {
                 case '"':
                     String getString = eatString();
                     addToken(getString,Token.STRCON);
-                    words.add(getString);
+                    addWord(getString);
                     break;
+                case '\n':
+                    line++;
                 default:
                     StringBuilder sb = new StringBuilder();
                     sb.append(cursor);
@@ -149,7 +152,7 @@ public class Lexer {
                             source.next();
                         }
                         addToken(sb.toString(),tokenType);
-                        words.add(sb.toString());
+                        addWord(sb.toString());
                     } else if (isIdentBegin(cursor)){
                         tokenType = Token.IDENFR;
                         while (source.hasNext() && isIdentContinue(source.getNextChar())) {
@@ -157,7 +160,7 @@ public class Lexer {
                             source.next();
                         }
                         addToken(sb.toString(),tokenType);
-                        words.add(sb.toString());
+                        addWord(sb.toString());
                     }
                     // todo 错误处理
                     break;
@@ -196,7 +199,7 @@ public class Lexer {
         source.next();
     }
 
-    public ArrayList<String> getWords() {
+    public ArrayList<Word> getWords() {
         return words;
     }
 
@@ -222,9 +225,14 @@ public class Lexer {
         //System.out.println(token);
     }
 
-    public void printLexer() {
-        for (String word: words) {
-            System.out.println(word2Token.get(word) + " " + word);
-        }
+    private void addWord(String word) {
+        words.add(new Word(word,line));
     }
+
+
+//    public void printLexer() {
+//        for (Word word: words) {
+//            System.out.println(word2Token.get(word.getText()) + " " + word.getText());
+//        }
+//    }
 }

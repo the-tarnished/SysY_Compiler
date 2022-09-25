@@ -2,11 +2,12 @@ package Parser;
 
 import Lexer.Lexer;
 import Lexer.Token;
+import Lexer.Word;
 import java.util.ArrayList;
 import java.util.HashMap;
 
 public class Words {
-    private final ArrayList<String> words;
+    private final ArrayList<Word> words;
     private final HashMap<String,Token> word2Token;
     private int cursor;
     private final int end;
@@ -19,11 +20,11 @@ public class Words {
         end = words.size();
     }
 
-    public String getNthWord(int nth) {
+    public Word getNthWord(int nth) {
         return words.get(cursor + nth);
     }
 
-    public String getNextWord() {
+    public Word getNextWord() {
         return getNthWord(0);
     }
 

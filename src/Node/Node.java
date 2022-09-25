@@ -1,6 +1,7 @@
 package Node;
 
 import Lexer.Token;
+import Lexer.Word;
 
 import java.util.ArrayList;
 
@@ -38,7 +39,7 @@ public abstract class Node {
         System.out.printf("<%s>%n",this.getSyntaxKind());
     }
 
-    public void printTokenAndWord(Token tokenType,String word) {
-        System.out.println(tokenType+" "+word);
+    public void printTokenAndWord(Token tokenType, Word word) {
+        System.out.println(tokenType+" "+word.getText());
     }
 }

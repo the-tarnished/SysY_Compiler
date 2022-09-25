@@ -1,0 +1,52 @@
+int main() {
+  printf("20373057\n");
+  int a = 0,b=10;
+  if (a != 0 || (0+b) == 0) {
+    b = b+1;
+  } else {
+    a = a + 2 - 1;
+  }
+  if (a && b) {
+    a = b + a;
+    b = a - b;
+    a = a - b;
+  }
+  int x = 8,y = 7,z = 6;
+  if(x < y) {
+    x = 10;
+  }else {
+    y = 10;
+  }
+  if (z > y) {
+    z = 0;
+  } else {
+    y = 0;
+  }
+  if (z <= x) {
+    z = z * 5 + x;
+  } else {
+    x = x * 5 + z;
+  }
+  z = z + 10000;
+  int times = 0;
+  while (a + b + z >= x) {
+    x = (a + b + z)/2+x;
+    times = 1 + times;
+    if (times > 2) {
+      break;
+    } else {
+      continue;
+    }
+  }
+  if(!x || !y || !z) {
+    x = x + y + z;
+    y = x + y + z;
+    z = y;
+  }
+  printf("%d %d\n",a,b);
+  printf("%d",x);
+  printf("%d",y);
+  printf("%d",x);
+  
+  return 0;
+}

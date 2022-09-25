@@ -1,6 +1,7 @@
 package Parser;
 
 import Lexer.Token;
+import Lexer.Word;
 import Node.*;
 import java.util.Stack;
 
@@ -37,7 +38,7 @@ public class Builder {
         children.push(node);
     }
 
-    public void buildTerminal(String word, Token token) {
+    public void buildTerminal(Word word, Token token) {
         children.push(new TerminalTkNode(SyntaxKind.TerminalTk,token,word));
     }
 }
