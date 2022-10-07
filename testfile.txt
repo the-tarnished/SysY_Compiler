@@ -1,3 +1,9 @@
+const int d[3] = {0};
+
+
 int main() {
-    int c = -1+5+6;
+    int a[5][+d[1]+25];
+    int c;
+    func(a[c]);
+    return 0;
 }
