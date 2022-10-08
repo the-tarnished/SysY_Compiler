@@ -28,6 +28,11 @@ public class FuncDefNode extends Node{
         ArrayList<ArrayList<Integer>> paramsDimension = new ArrayList<>();
         boolean hasReturn = false;
         for (Node each:getChildren()) {
+            if (each instanceof BlockNode) {
+                if (!symbol.addFunc(name,isVoid,paramsDimension)) {
+                    ret.errorList.add(new Pair<>(ErrorKind.Redefined,line));
+                }
+            }
             ErrorRet tmp = each.check();
             ret.errorList.addAll(tmp.errorList);
             if (isIdent(each)) {
@@ -47,9 +52,7 @@ public class FuncDefNode extends Node{
                 paramsDimension.addAll(tmp.paramDimension);
             }
         }
-        if (!symbol.addFunc(name,isVoid,paramsDimension)) {
-            ret.errorList.add(new Pair<>(ErrorKind.Redefined,line));
-        } else if (!hasReturn && !isVoid) {
+        if (!hasReturn && !isVoid) {
             ret.errorList.add(new Pair<>(ErrorKind.Return_Absence,rBraceLine));
         }
         symbol.setVoid(true);

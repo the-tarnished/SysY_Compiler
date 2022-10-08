@@ -36,10 +36,10 @@ public class MulExpNode extends Node{
                             ret.value.set(0, ret.value.get(0) * tmp.value.get(0));
                             break;
                         case "/":
-                            ret.value.set(0, ret.value.get(0) / tmp.value.get(0));
+                            ret.value.set(0, 0);
                             break;
                         case "%":
-                            ret.value.set(0, ret.value.get(0) % tmp.value.get(0));
+                            ret.value.set(0, 0);
                             break;
                         default:
                             break;

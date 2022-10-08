@@ -107,6 +107,9 @@ public class Symbol { // 全局符号表,所有的符号表查询都要通过这
         Set<String> tmp = this.stackSymbolTables.pop();
         for (String name : tmp) {
             string2VarStack.get(name).pop();
+            if (string2VarStack.get(name).size() == 0) {
+                string2VarStack.remove(name);
+            }
         }
     }
 
