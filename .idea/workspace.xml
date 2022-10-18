@@ -7,6 +7,7 @@
     <list default="true" id="2c153304-fb23-4737-9289-ae370458be0c" name="变更" comment="语法分析完成">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/error.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/testfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testfile.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,6 +120,8 @@
       <workItem from="1665044585925" duration="84000" />
       <workItem from="1665155679103" duration="6377000" />
       <workItem from="1665193144507" duration="2384000" />
+      <workItem from="1665196359740" duration="25000" />
+      <workItem from="1665198036223" duration="1830000" />
     </task>
     <task id="LOCAL-00001" summary="语法分析完成">
       <created>1664035886513</created>
@@ -149,15 +152,6 @@
     <option name="LAST_COMMIT_MESSAGE" value="语法分析完成" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/src/node/CompUnitNode.java</url>
-          <line>19</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="node.MulExpNode" memberName="children" />
