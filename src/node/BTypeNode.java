@@ -16,4 +16,5 @@ public class BTypeNode extends Node{
     public ErrorRet check() {
         return new ErrorRet();
     }
+
 }

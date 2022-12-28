@@ -1,6 +1,8 @@
 package node;
 
+import error.Context;
 import error.ErrorRet;
+import error.IRRet;
 
 public class PrimaryExpNode extends Node{
     public PrimaryExpNode(SyntaxKind input) {
@@ -22,5 +24,14 @@ public class PrimaryExpNode extends Node{
             }
         }
         return ret;
+    }
+
+    @Override
+    public void buildIR(Context ctx, IRRet ret) {
+        for (Node each:getChildren()) {
+            if (!(each instanceof TerminalTkNode)) {
+                each.buildIR(ctx,ret);
+            }
+        }
     }
 }

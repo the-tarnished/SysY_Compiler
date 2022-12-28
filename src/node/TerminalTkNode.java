@@ -1,6 +1,8 @@
 package node;
 
+import error.Context;
 import error.ErrorRet;
+import error.IRRet;
 import lexer.Token;
 import lexer.Word;
 import org.omg.CORBA.PUBLIC_MEMBER;
@@ -30,5 +32,10 @@ public class TerminalTkNode extends Node{
     @Override
     public ErrorRet check() {
         return super.check();
+    }
+
+    @Override
+    public void buildIR(Context ctx, IRRet ret) {
+        ret.ret = getWord().getText();
     }
 }

@@ -38,4 +38,8 @@ public class FuncEntry{
     public boolean needParam() {
         return paramsDimension.size() != 0;
     }
+
+    public String getName() {
+        return name;
+    }
 }

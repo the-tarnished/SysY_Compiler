@@ -1,6 +1,8 @@
 package node;
 
+import error.Context;
 import error.ErrorRet;
+import error.IRRet;
 
 public class ConstExpNode extends Node{
     public ConstExpNode(SyntaxKind input) {
@@ -22,5 +24,12 @@ public class ConstExpNode extends Node{
         }
         symbol.setConst(false);
         return ret;
+    }
+
+    @Override
+    public void buildIR(Context ctx, IRRet ret) {
+        ctx.isConst = true;
+        super.buildIR(ctx, ret);
+        ctx.isConst = false;
     }
 }

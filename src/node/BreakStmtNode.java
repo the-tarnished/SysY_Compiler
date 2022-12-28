@@ -1,8 +1,7 @@
 package node;
 
-import error.ErrorKind;
-import error.ErrorRet;
-import error.Pair;
+import control_flow.quaternion.J;
+import error.*;
 
 public class BreakStmtNode extends Node{
     public BreakStmtNode(SyntaxKind input) {
@@ -23,5 +22,11 @@ public class BreakStmtNode extends Node{
             ret.errorList.add(new Pair<>(ErrorKind.Break_Continue_Out_Loop,line));
         }
         return ret;
+    }
+
+    @Override
+    public void buildIR(Context ctx, IRRet ret) {
+        controlFlowBuilder.insertQuaternion(new J(ctx.breakBlock));
+        controlFlowBuilder.insertBasicBlock(controlFlowBuilder.getNewBasicBlock());
     }
 }

@@ -1,45 +1,76 @@
-// #include<stdio.h>
-// int getint() {
-//   int n ;
-//   scanf("%d",&n);
-//   return n;
-// }
-// const int N1n1 = 10000;
-// int N = 114514,NN=12121;
-// void useLess() {
-//   printf("UseLess");
-//   return;
-// }
-// int main() {
-//   printf("20373057\n");
-//   int a1a1 = 9;
-//   const int tmpC = 9527;
-//   {
-//     int a1a1 = 9;
-//     const int tmpC = 9526;
-//     printf("%d\n",tmpC);
-//     a1a1 = 44;
-//   }
-//   {}
-//   {;}
-//   a1a1=a1a1+1;
-//   int tmp,tmp1;
-//   printf("%d\n",(N+a1a1) * N1n1);
-//   useLess();
-//   return 0;
-// }
-// /*
-// anonymous text
-// */
-
+/*
+// Created by emilyu on 2022/9/6.
+// C
+*/
 #include<stdio.h>
 
-void func(int a[][10]) {
-  return;
+int getint() {
+  int ret = 0;
+  scanf("%d",&ret);
+  return ret;
 }
+int global_var1=9;
+int global_var2,global_var3=10;
+const int con1=44;
+const int con2=56*12+6,con4=888;
+int main(){
+	const int con3=con1+con2/39;
+    printf("(20373335)\n");
+    printf("C level,test a code has decl,no func\n");
+    printf("con1 is %d\n",con1);
+    printf("con2 is %d,con3 is %d\n",con2,con3);
+    
+    int var1,var2=con3;
+    int var3;
+    var3=getint();
+    // 鏃燘lockItem鐨勮鍙ュ潡
+    {
+        ;
+    }
+    // Block宓屽Block鐨勬儏鍐?
+    {{
 
-int main () {
-  int a[2][5];
-  func(a);
-  return 0;
+    }}
+    
+    // 瑕嗙洊宸﹀€艰鍙?椤癸紝鍥犲瓙锛岃〃杈惧紡锛屽嚱鏁?
+    printf("Inter result is %d %d %d\n",(con2*var3),(con1+con3),(con2*var3)%(con1+con3));
+    var1=var2-var3*var2+(con2*var3)%(con1+con3);
+    printf("the left val is %d\n",var1);
+    // Exp
+    var2-var3*var2+(con2*var3)%(con1+con3);
+    
+    int var5=-+-+-con1;
+
+    // If
+    if(var1>1){
+        printf("var1 greater than 1\n");
+    }
+    if (con3>=0){
+        var3=var1/con1+var2*1225;
+    } else{
+        if(var2<con4){
+            var2=getint();
+        }
+    }
+    if (var5<=con4){
+    	// printf后的exp不能为条件表达式 
+    	if (var5==con1){
+    		printf("var5 equal to con1\n");	
+		} 
+        if(23!=22+1-7*55%9+7/2<=24){
+			;
+		} 
+    }
+    // While
+    while(1){
+    	int i=56;
+    	int j = 0;
+    	if (j<=i){
+    		break;
+		} else{
+			int k;
+			continue;
+		}	
+	}
+    return 0;
 }

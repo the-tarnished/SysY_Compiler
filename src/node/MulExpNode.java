@@ -1,6 +1,12 @@
 package node;
 
+import control_flow.quaternion.*;
+import error.Context;
 import error.ErrorRet;
+import error.IRRet;
+
+import java.util.ArrayList;
+import java.util.Objects;
 
 public class MulExpNode extends Node{
     public MulExpNode(SyntaxKind input) {
@@ -36,10 +42,10 @@ public class MulExpNode extends Node{
                             ret.value.set(0, ret.value.get(0) * tmp.value.get(0));
                             break;
                         case "/":
-                            ret.value.set(0, 0);
+                            ret.value.set(0, ret.value.get(0) / tmp.value.get(0));
                             break;
                         case "%":
-                            ret.value.set(0, 0);
+                            ret.value.set(0, ret.value.get(0) % tmp.value.get(0));
                             break;
                         default:
                             break;
@@ -52,5 +58,45 @@ public class MulExpNode extends Node{
             }
         }
         return ret;
+    }
+
+    @Override
+    public void buildIR(Context ctx, IRRet ret) {
+        String  op = "";
+        if (getChildren().size() == 1) {
+            getChildren().get(0).buildIR(ctx,ret);
+        } else {
+            // 如果是数字就计算算了,不想判断是不是const里面了,头疼
+            ArrayList<IRRet> tmps = new ArrayList<>();
+            for (Node each:getChildren()) {
+                IRRet tmp = new IRRet();
+                each.buildIR(ctx,tmp);
+                tmps.add(tmp);
+                if (each instanceof TerminalTkNode) { // 一定可以计算出来
+                    op = ((TerminalTkNode) each).getWord().getText();
+                }
+            }
+            if (isDigit(tmps.get(0).ret) && isDigit(tmps.get(2).ret)) {
+                int val = Objects.equals(op, "*") ? Integer.parseInt(tmps.get(0).ret) * Integer.parseInt(tmps.get(2).ret) :
+                        Objects.equals(op, "/") ? Integer.parseInt(tmps.get(0).ret) / Integer.parseInt(tmps.get(2).ret) :
+                        Integer.parseInt(tmps.get(0).ret) % Integer.parseInt(tmps.get(2).ret);
+                ret.ret = Integer.toString(val);
+            } else { // 寄咯
+                ret.ret = controlFlowBuilder.getTmpVar();
+                switch (op) {
+                    case "*":
+                        controlFlowBuilder.insertQuaternion(new Mul(ret.ret,tmps.get(0).ret,tmps.get(2).ret));
+                        break;
+                    case "/":
+                        controlFlowBuilder.insertQuaternion(new Div(ret.ret,tmps.get(0).ret,tmps.get(2).ret));
+                        break;
+                    case "%":
+                        controlFlowBuilder.insertQuaternion(new Mod(ret.ret,tmps.get(0).ret,tmps.get(2).ret));
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
     }
 }

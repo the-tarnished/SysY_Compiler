@@ -25,4 +25,5 @@ public class ErrorNode extends Node{
         ret.errorList.add(new Pair<>(errorKind,line));
         return ret;
     }
+
 }

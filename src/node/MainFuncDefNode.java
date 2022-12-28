@@ -1,8 +1,10 @@
 package node;
 
-import error.ErrorKind;
-import error.ErrorRet;
-import error.Pair;
+import control_flow.ControlFlowBuilder;
+import control_flow.Func;
+import control_flow.quaternion.PlayBack;
+import control_flow.quaternion.Pop;
+import error.*;
 import lexer.Token;
 
 import java.util.ArrayList;
@@ -49,5 +51,23 @@ public class MainFuncDefNode extends Node{
         }
         symbol.setVoid(true);
         return ret;
+    }
+
+    @Override
+    public void buildIR(Context ctx, IRRet ret) {
+        String name = "main";
+        boolean isVoid = false;
+        for (Node each:getChildren()) {
+            if (each instanceof TerminalTkNode && ((TerminalTkNode) each).getTokenType().equals(Token.LPARENT)) {
+                symbol.startBlock();
+            } else if (each instanceof BlockNode) {
+                symbol.addFunc(name,false,new ArrayList<>());
+                // 新的基本块,该切换环境了,别急
+                controlFlowBuilder.insertFunc(new Func(ControlFlowBuilder.getFuncName(name),0));
+                controlFlowBuilder.insertBasicBlock(controlFlowBuilder.getNewBasicBlock());
+            }
+            IRRet tmp = new IRRet();
+            each.buildIR(ctx,tmp);
+        }
     }
 }

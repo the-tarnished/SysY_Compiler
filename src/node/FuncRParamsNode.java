@@ -1,6 +1,8 @@
 package node;
 
+import error.Context;
 import error.ErrorRet;
+import error.IRRet;
 
 public class FuncRParamsNode extends Node{
 
@@ -30,5 +32,17 @@ public class FuncRParamsNode extends Node{
         }
         symbol.setInRealParam(false);
         return ret;
+    }
+
+    @Override
+    public void buildIR(Context ctx, IRRet ret) {
+        for (Node each:getChildren()) {
+            IRRet tmp = new IRRet();
+            each.buildIR(ctx,tmp);
+            if (each instanceof TerminalTkNode) {
+                continue;
+            }
+            ret.args.add(tmp.ret);
+        }
     }
 }

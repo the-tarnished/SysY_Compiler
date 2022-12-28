@@ -10,4 +10,5 @@ public class FuncTypeNode extends Node{
         printChildren();
         printSyntaxKind();
     }
+
 }

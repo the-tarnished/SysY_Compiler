@@ -2,12 +2,17 @@ package error;
 
 import java.util.*;
 
+import static control_flow.ControlFlowBuilder.IR;
+import static control_flow.ControlFlowBuilder.getVarName;
+
 public class Symbol { // 全局符号表,所有的符号表查询都要通过这个类,单例模式
-    private final static Symbol instance = new Symbol();
+    private static Symbol instance = new Symbol();
     private HashMap<String,Stack<VarEntry>> string2VarStack;
     private Stack<Set<String>> stackSymbolTables;
     private HashMap<String,FuncEntry> string2Func;
     private HashMap<String,VarEntry> globalVar;
+    private HashMap<String,VarEntry> constVar;
+    private HashMap<String,String> constStr;
     private boolean inLoop; // 是否是在循环里面
     private boolean isVoid; // 是否在 void 函数里面
     private boolean isConst; // 是否是 const
@@ -39,6 +44,8 @@ public class Symbol { // 全局符号表,所有的符号表查询都要通过这
         stackSymbolTables = new Stack<>();
         string2Func = new HashMap<>();
         globalVar = new HashMap<>();
+        constVar = new HashMap<>();
+        constStr = new HashMap<>();
         inLoop = false;
         isVoid = true;
         isFuncDecl = false;
@@ -49,6 +56,9 @@ public class Symbol { // 全局符号表,所有的符号表查询都要通过这
     }
 
     public static Symbol getInstance() {
+        if (instance == null) {
+            instance = new Symbol();
+        }
         return instance;
     }
 
@@ -57,20 +67,22 @@ public class Symbol { // 全局符号表,所有的符号表查询都要通过这
         System.out.printf("%d %s\n",line,error2Signal.get(kind));
     }
 
-    public boolean addVar(boolean isConst, String name, ArrayList<Integer> dimension,ArrayList<Integer> initVal) {
+    public int addVar(boolean isConst, String name, ArrayList<Integer> dimension,ArrayList<Integer> initVal) {
         // 判断是否重复定义
         Set<String> cur = stackSymbolTables.pop();
         if (cur.contains(name)) {
             stackSymbolTables.push(cur);
-            return false;
+            return 0;
         }
         ++cnt;
         VarEntry var = new VarEntry(name,isConst,dimension,initVal,cnt);
         // 维护符号表
         cur.add(name);
         if (stackSymbolTables.size() == 0) {
-            globalVar.put(name,var);
+            globalVar.put(getVarName(name,cnt),var);
             var.setGlobal();
+        } else if (isConst) {
+            constVar.put(getVarName(name,cnt),var);
         }
 
         // 维护索引
@@ -82,10 +94,10 @@ public class Symbol { // 全局符号表,所有的符号表查询都要通过这
             string2VarStack.get(name).push(var);
         }
         stackSymbolTables.push(cur);
-        return true;
+        return cnt;
     }
 
-    public boolean addVar(boolean isConst, String name, ArrayList<Integer> dimension) {
+    public int addVar(boolean isConst, String name, ArrayList<Integer> dimension) {
         ArrayList<Integer> initVal = new ArrayList<>();
         return addVar(isConst,name,dimension,initVal);
     }
@@ -137,14 +149,6 @@ public class Symbol { // 全局符号表,所有的符号表查询都要通过这
         return isConst;
     }
 
-    public boolean isFuncDecl() {
-        return isFuncDecl;
-    }
-
-    public void setFuncDecl(boolean funcDecl) {
-        isFuncDecl = funcDecl;
-    }
-
     public VarEntry getVar(String name) {
         if (string2VarStack.containsKey(name)) {
             return string2VarStack.get(name).peek();
@@ -179,5 +183,43 @@ public class Symbol { // 全局符号表,所有的符号表查询都要通过这
 
     public void setNeedParam(boolean needParam) {
         this.needParam = needParam;
+    }
+
+    public static void clear() {
+        instance = null;
+        instance = getInstance();
+    }
+
+    public void addConstStr(String label,String text) {
+        constStr.put(label,text);
+    }
+
+    public void printGlobalVar() {
+        // const global str
+        // globalVar = new HashMap<>();
+        // constVar = new HashMap<>();
+        // constStr = new HashMap<>();
+
+        for (Map.Entry<String, VarEntry> entry : globalVar.entrySet()) {
+            System.out.printf("%s: ", entry.getKey());
+            entry.getValue().print();
+            System.out.printf("\n");
+        }
+        for (Map.Entry<String, VarEntry> entry : constVar.entrySet()) {
+            System.out.printf("%s: ", entry.getKey());
+            entry.getValue().print();
+            System.out.printf("\n");
+        }
+        for (Map.Entry<String, String> entry : constStr.entrySet()) {
+            if (IR) {
+                System.out.printf("%s:%s\n", entry.getKey(), entry.getValue());
+            } else {
+                System.out.printf("%s : .asciiz \"%s\"\n", entry.getKey(), entry.getValue());
+            }
+        }
+    }
+
+    public boolean isGlobalVar(String var) {
+        return globalVar.containsKey(var);
     }
 }

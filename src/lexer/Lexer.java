@@ -57,8 +57,12 @@ public class Lexer {
             switch (cursor) {
                 case '/':
                     if (source.getNthChar(1) == '/') {
+                        source.next();
+                        source.next();
                         this.eatLineComment();
                     } else if (source.getNthChar(1) == '*') {
+                        source.next();
+                        source.next();
                         this.eatBlockComment();
                     } else {
                         addWord(String.valueOf(cursor));

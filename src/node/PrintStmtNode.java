@@ -1,10 +1,12 @@
 package node;
 
-import error.ErrorKind;
-import error.ErrorRet;
-import error.Pair;
+import control_flow.quaternion.PrintInt;
+import control_flow.quaternion.PrintStr;
+import error.*;
 import lexer.FormatStr;
 import lexer.Token;
+
+import java.util.ArrayList;
 
 public class PrintStmtNode extends Node{
 
@@ -65,5 +67,44 @@ public class PrintStmtNode extends Node{
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void buildIR(Context ctx, IRRet ret) {
+        ArrayList<String> formatArgs = new ArrayList<>();
+        String formatStr = " ";
+        for (Node each:getChildren()) {
+            if (each instanceof TerminalTkNode && ((TerminalTkNode) each) .getTokenType().equals(Token.STRCON)) {
+                formatStr = ((FormatStr)((TerminalTkNode) each).getWord()).getStr();
+            } else if (each instanceof ExpNode) {
+                IRRet tmp = new IRRet();
+                each.buildIR(ctx,tmp);
+                formatArgs.add(tmp.ret);
+            }
+        }
+        StringBuilder cursor = new StringBuilder();
+        int j = 0;
+        for (int i = 0;i < formatStr.length();i++) {
+            char cha = formatStr.charAt(i);
+            if (cha == '%' && formatStr.charAt(i+1) == 'd') {
+                if (cursor.length() != 0) {
+                    String label = controlFlowBuilder.getStrLabel();
+                    symbol.addConstStr(label, cursor.toString());
+                    cursor = new StringBuilder();
+                    controlFlowBuilder.insertQuaternion(new PrintStr(label));
+                }
+                controlFlowBuilder.insertQuaternion(new PrintInt(formatArgs.get(j)));
+                i++;
+                j++;
+            } else {
+                cursor.append(cha);
+            }
+        }
+        // 给 formatStr 收个尾
+        if (cursor.length() != 0) {
+            String label = controlFlowBuilder.getStrLabel();
+            symbol.addConstStr(label, cursor.toString());
+            controlFlowBuilder.insertQuaternion(new PrintStr(label));
+        }
     }
 }

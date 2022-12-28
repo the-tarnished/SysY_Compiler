@@ -20,4 +20,5 @@ public class DeclNode extends Node{
         }
         return ret;
     }
+
 }
