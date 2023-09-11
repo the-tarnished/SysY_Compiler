@@ -1,0 +1,23 @@
+var_a_1: size:1 initVal:3 
+var_ar_2: size:3 initVal:1 2 3 
+
+func_main:
+label1:
+Load tmp_1 0(var_a_1)
+Assign var_c_3 tmp_1
+Store 4 0(var_a_1)
+Assign tmp_2 1
+Assign tmp_3 0
+Mul tmp_4 tmp_2 1
+Add tmp_3 tmp_3 tmp_4
+Mul tmp_2 tmp_2 3
+Load tmp_5 tmp_3(var_ar_2)
+Assign var_d_4 tmp_5
+Assign tmp_6 1
+Assign tmp_7 0
+Mul tmp_8 tmp_6 2
+Add tmp_7 tmp_7 tmp_8
+Mul tmp_6 tmp_6 3
+Store 5 tmp_7(var_ar_2)
+Return 0
+PlayBack

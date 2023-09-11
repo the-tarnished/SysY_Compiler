@@ -48,6 +48,7 @@ public class Lexer {
         word2Token.put("]",Token.RBRACK);
         word2Token.put("{",Token.LBRACE);
         word2Token.put("}",Token.RBRACE);
+        word2Token.put("bitand",Token.BITAND);
         line = 1;
     }
 

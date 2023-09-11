@@ -1,9 +1,7 @@
 package node;
 
 import control_flow.ControlFlowBuilder;
-import control_flow.quaternion.Alloc;
-import control_flow.quaternion.Assign;
-import control_flow.quaternion.Store;
+import control_flow.quaternion.*;
 import error.*;
 import lexer.Token;
 
@@ -58,6 +56,11 @@ public class VarDefNode extends Node{
             if (each instanceof TerminalTkNode) {
                 if (((TerminalTkNode) each).getTokenType() == Token.IDENFR) {
                     name = ((TerminalTkNode) each).getWord().getText();
+                } else if (((TerminalTkNode) each).getTokenType() == Token.GETINTTK) {
+                    init.add(controlFlowBuilder.getTmpVar());
+                    controlFlowBuilder.insertQuaternion(new FetchInt());
+                    controlFlowBuilder.insertQuaternion(new GetInt(init.get(0)));
+                    break;
                 }
             }
             if (each instanceof ConstExpNode) {
@@ -77,7 +80,7 @@ public class VarDefNode extends Node{
         if (dimension.size() == 0) {// 变量声明
             String varName = ControlFlowBuilder.getVarName(name,id);
             if (init.size() == 0) {
-                controlFlowBuilder.insertQuaternion(new Assign(varName,"20373057"));
+                controlFlowBuilder.insertQuaternion(new Assign(varName,"0"));
             } else {
                 controlFlowBuilder.insertQuaternion(new Assign(varName,init.get(0)));
             }

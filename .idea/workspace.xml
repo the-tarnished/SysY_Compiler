@@ -5,146 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2c153304-fb23-4737-9289-ae370458be0c" name="变更" comment="语法分析完成">
-      <change afterPath="$PROJECT_DIR$/src/control_flow/BasicBlock.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/ConflictGraph.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/ConflictGraphNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/ControlFlowBuilder.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/Func.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/RegisterAlloc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Add.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Alloc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/And.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Assign.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Binary.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Call.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Div.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Eql.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/FetchInt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Ge.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/GetInt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/GetReturn.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Gt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/J.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Jwf.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Le.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Load.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/LoadPtr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Lt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Mod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Mul.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Neg.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Neq.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Not.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Or.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/PlayBack.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Pop.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/PrintInt.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/PrintStr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Push.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Quaternion.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/QuaternionKind.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Return.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Single.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Store.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/control_flow/quaternion/Sub.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/error/Context.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/error/IRRet.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/error.txt" beforeDir="false" afterPath="$PROJECT_DIR$/error.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mips.txt" beforeDir="false" afterPath="$PROJECT_DIR$/mips.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Compiler.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Compiler.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Lexer/Lexer.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Lexer/Lexer.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/AddExpNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/AddExpNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/AssignStmtNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/AssignStmtNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/BlockNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/BlockNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/BreakStmtNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/BreakStmtNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/CompUnitNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/CompUnitNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/ConstDeclNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/ConstDeclNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/ConstDefNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/ConstDefNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/ConstExpNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/ConstExpNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/ConstInitValNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/ConstInitValNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/ContinueStmtNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/ContinueStmtNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/EqExpNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/EqExpNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/FuncDefNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/FuncDefNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/FuncFParamNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/FuncFParamNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/FuncFParamsNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/FuncFParamsNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/FuncRParamsNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/FuncRParamsNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/GetIntStmtNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/GetIntStmtNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/IfStmtNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/IfStmtNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/InitValNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/InitValNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/LAndExpNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/LAndExpNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/LOrExpNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/LOrExpNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/LValNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/LValNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/MainFuncDefNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/MainFuncDefNode.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Lexer/Token.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Lexer/Token.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/MulExpNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/MulExpNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/Node.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/Node.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/NumberNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/NumberNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/PrimaryExpNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/PrimaryExpNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/PrintStmtNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/PrintStmtNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/RelExpNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/RelExpNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/ReturnStmtNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/ReturnStmtNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/TerminalTkNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/TerminalTkNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/UnaryExpNode$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/UnaryExpNode$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/UnaryExpNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/UnaryExpNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/VarDeclNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/VarDeclNode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/VarDefNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/VarDefNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Node/WhileStmtNode.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Node/WhileStmtNode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/error/FuncEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/error/FuncEntry.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/error/Symbol.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/error/Symbol.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/error/VarEntry.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/error/VarEntry.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/Parser/Parser.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/Parser/Parser.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/ysyComplier/control_flow/ControlFlowBuilder.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/ysyComplier/control_flow/ControlFlowBuilder.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src.zip" beforeDir="false" afterPath="$PROJECT_DIR$/src.zip" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Compiler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Compiler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/error/FuncEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/error/FuncEntry.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/error/Symbol.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/error/Symbol.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/error/VarEntry.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/error/VarEntry.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/control_flow/ControlFlowBuilder.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/control_flow/ControlFlowBuilder.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/lexer/Lexer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Lexer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/AddExpNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/AddExpNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/AssignStmtNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/AssignStmtNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/BTypeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/BTypeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/BlockItemNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/BlockItemNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/BlockNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/BlockNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/BreakStmtNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/BreakStmtNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/CompUnitNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/CompUnitNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/CondNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/CondNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/ConstDeclNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/ConstDeclNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/ConstDefNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/ConstDefNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/ConstExpNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/ConstExpNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/ConstInitValNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/ConstInitValNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/ContinueStmtNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/ContinueStmtNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/DeclNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/DeclNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/EqExpNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/EqExpNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/ErrorNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/ErrorNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/FuncDefNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/FuncDefNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/FuncFParamNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/FuncFParamNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/FuncFParamsNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/FuncFParamsNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/FuncRParamsNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/FuncRParamsNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/FuncTypeNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/FuncTypeNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/GetIntStmtNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/GetIntStmtNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/IfStmtNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/IfStmtNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/InitValNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/InitValNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/LAndExpNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/LAndExpNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/LOrExpNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/LOrExpNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/LValNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/LValNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/MainFuncDefNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/MainFuncDefNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/lexer/Token.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/lexer/Token.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node/MulExpNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/MulExpNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/Node.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/Node.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/NumberNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/NumberNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/PrimaryExpNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/PrimaryExpNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/PrintStmtNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/PrintStmtNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/RelExpNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/RelExpNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/ReturnStmtNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/ReturnStmtNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/StmtNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/StmtNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/TerminalTkNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/TerminalTkNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/UnaryExpNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/UnaryExpNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/VarDeclNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/VarDeclNode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/node/VarDefNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/VarDefNode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/node/WhileStmtNode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/node/WhileStmtNode.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/parser/Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/parser/Parser.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/testfile.txt" beforeDir="false" afterPath="$PROJECT_DIR$/testfile.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfile.zip" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfile/test.c" beforeDir="false" afterPath="$PROJECT_DIR$/testfile/test.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/testfile/test.exe" beforeDir="false" afterPath="$PROJECT_DIR$/testfile/test.exe" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/设计文档.md" beforeDir="false" afterPath="$PROJECT_DIR$/设计文档.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/设计文档.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/设计文档.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/设计文档.zip" beforeDir="false" afterPath="$PROJECT_DIR$/设计文档.zip" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/优化文档.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/总结感想.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/设计文档.zip" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -189,23 +70,17 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">
-    <property name="DatabaseDriversLRU" value="postgresql" />
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Lexer" />
-    <property name="node.js.detected.package.eslint" value="true" />
-    <property name="node.js.detected.package.tslint" value="true" />
-    <property name="node.js.selected.package.eslint" value="(autodetect)" />
-    <property name="node.js.selected.package.tslint" value="(autodetect)" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="project.structure.last.edited" value="SDK" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.2" />
-    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
-    <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
-  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.projectsettings.compiler.javacompiler&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Compile\ysyComplier\src\Lexer" />
@@ -224,7 +99,7 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="应用程序.Compiler" />
+        <item itemvalue="Application.Compiler" />
       </list>
     </recent_temporary>
   </component>
@@ -295,6 +170,14 @@
       <workItem from="1671898861597" duration="579000" />
       <workItem from="1672210525679" duration="5000" />
       <workItem from="1672210739140" duration="675000" />
+      <workItem from="1672223418652" duration="9260000" />
+      <workItem from="1672416390482" duration="65000" />
+      <workItem from="1676604009268" duration="604000" />
+      <workItem from="1687778184948" duration="746000" />
+      <workItem from="1687845857747" duration="2231000" />
+      <workItem from="1688309718055" duration="141000" />
+      <workItem from="1688350822995" duration="158000" />
+      <workItem from="1689387599112" duration="4000" />
     </task>
     <task id="LOCAL-00001" summary="语法分析完成">
       <created>1664035886513</created>
@@ -347,5 +230,9 @@
         <watch expression="words.getNthWord(0)" language="JAVA" />
       </configuration>
     </watches-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

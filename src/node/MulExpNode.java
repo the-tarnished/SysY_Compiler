@@ -47,6 +47,9 @@ public class MulExpNode extends Node{
                         case "%":
                             ret.value.set(0, ret.value.get(0) % tmp.value.get(0));
                             break;
+                        case "bitand":
+                            ret.value.set(0, ret.value.get(0) & tmp.value.get(0));
+                            break;
                         default:
                             break;
                     }
@@ -79,6 +82,7 @@ public class MulExpNode extends Node{
             if (isDigit(tmps.get(0).ret) && isDigit(tmps.get(2).ret)) {
                 int val = Objects.equals(op, "*") ? Integer.parseInt(tmps.get(0).ret) * Integer.parseInt(tmps.get(2).ret) :
                         Objects.equals(op, "/") ? Integer.parseInt(tmps.get(0).ret) / Integer.parseInt(tmps.get(2).ret) :
+                        Objects.equals(op, "bitand") ? Integer.parseInt(tmps.get(0).ret) & Integer.parseInt(tmps.get(2).ret) :
                         Integer.parseInt(tmps.get(0).ret) % Integer.parseInt(tmps.get(2).ret);
                 ret.ret = Integer.toString(val);
             } else { // 寄咯
@@ -92,6 +96,9 @@ public class MulExpNode extends Node{
                         break;
                     case "%":
                         controlFlowBuilder.insertQuaternion(new Mod(ret.ret,tmps.get(0).ret,tmps.get(2).ret));
+                        break;
+                    case "bitand":
+                        controlFlowBuilder.insertQuaternion(new And(ret.ret,tmps.get(0).ret,tmps.get(2).ret));
                         break;
                     default:
                         break;

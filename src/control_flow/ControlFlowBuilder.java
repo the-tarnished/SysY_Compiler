@@ -16,7 +16,7 @@ public class ControlFlowBuilder {
     private ArrayList<BasicBlock> basicBlocks;
     private BasicBlock curBlock;
     private Func curFunc;
-    public static boolean IR = false,OPT = true;
+    public static boolean IR = true,OPT = true;
 
 
     private ControlFlowBuilder() {
@@ -33,6 +33,7 @@ public class ControlFlowBuilder {
         if(instance == null) {
             instance = new ControlFlowBuilder();
         }
+
         return instance;
     }
 

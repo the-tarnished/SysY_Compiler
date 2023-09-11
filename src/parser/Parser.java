@@ -158,7 +158,13 @@ public class Parser {
         }
         if (words.getNextKind().equals(Token.ASSIGN)) {
             terminalTk(Token.ASSIGN);
-            initVal();
+            if (words.getNextKind().equals(Token.GETINTTK)) {
+                terminalTk(Token.GETINTTK);
+                terminalTk(Token.LPARENT);
+                terminalTk(Token.RPARENT);
+            } else {
+                initVal();
+            }
         }
         builder.endBuild(node);
     }
@@ -531,7 +537,7 @@ public class Parser {
     private void mulExp() {
         builder.beginBuild();
         Node node = new MulExpNode(SyntaxKind.MulExp);
-        ArrayList<Token> list = new ArrayList<>(Arrays.asList(Token.MULT, Token.DIV, Token.MOD));
+        ArrayList<Token> list = new ArrayList<>(Arrays.asList(Token.MULT, Token.DIV, Token.MOD, Token.BITAND));
         int point = builder.getPoint();
         do {
             if (list.contains(words.getNextKind())) {

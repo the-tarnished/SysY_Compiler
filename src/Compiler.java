@@ -20,16 +20,16 @@ public class Compiler {
         Parser parser = new Parser(lexer);
         parser.run();
         //parser.print();
-        ErrorRet ret = parser.getRoot().check();
-        ret.errorList.sort(Comparator.naturalOrder());
-        if(ret.errorList.size() != 0) {
-            PrintStream print=new PrintStream("error.txt"); //写好输出位置文件；
-            System.setOut(print);
-            for (Pair<ErrorKind> each:ret.errorList) {
-                Symbol.printError(each.getKey(),each.getValue());
-            }
-            return;
-        }
+//        ErrorRet ret = parser.getRoot().check();
+//        ret.errorList.sort(Comparator.naturalOrder());
+//       if(ret.errorList.size() != 0) {
+//          PrintStream print=new PrintStream("error.txt"); //写好输出位置文件；
+//         System.setOut(print);
+//         for (Pair<ErrorKind> each:ret.errorList) {
+//             Symbol.printError(each.getKey(),each.getValue());
+//         }
+//         return;
+//     }
         Context ctx = new Context();
         IRRet ret2 = new IRRet();
         parser.getRoot().buildIR(ctx,ret2);

@@ -38,5 +38,6 @@ public enum Token {
     LBRACK,
     RBRACK,
     LBRACE,
-    RBRACE
+    RBRACE,
+    BITAND
 }
